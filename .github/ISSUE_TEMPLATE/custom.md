@@ -7,14 +7,6 @@ assignees: leece03
 
 ---
 
----
-name: 📝 Check List
-about: Issue 생성 시 반드시 확인해야 할 기본 템플릿
-title: "[이슈 제목]"
-labels: ''
-assignees: ''
----
-
 ## ✅ Check List  
 - [ ] Issue 유형 선택 (제목 및 Label 설정 완료)  
 - [ ] 요청 사항 구체적으로 설명  

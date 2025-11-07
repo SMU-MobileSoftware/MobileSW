@@ -1,20 +1,28 @@
 package com.example.re0.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.example.re0.R
 import com.example.re0.components.MintCardTemplate
 
 @Composable
@@ -52,7 +60,29 @@ fun HomeScreen( navController: NavController) {
                     Text(text="OX 퀴즈", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold )
                 },
                 bottomContent = {
-                    Text("플라스틱 병의 라벨(비닐)은 제거하고 버려야 한다.", color = Color.Black, fontSize = 15.sp)
+                    Text("플라스틱 병의 라벨(비닐)은 제거하고 버려야 한다.", color = Color.Black, fontSize = 16.sp)
+                    Row(modifier = Modifier.padding(10.dp)){
+                        FloatingActionButton(
+                            onClick = {},
+                            modifier = Modifier.width(150.dp),
+                            containerColor = Color.White,
+                            elevation = FloatingActionButtonDefaults.elevation(0.dp)
+                        ) {
+                            Image(painter = painterResource(R.drawable.yes),
+                                contentDescription = "yes 버튼",
+                                Modifier.size(50.dp))
+                        }
+                        FloatingActionButton(
+                            onClick = {},
+                            modifier = Modifier.width(150.dp),
+                            containerColor = Color.White,
+                            elevation = FloatingActionButtonDefaults.elevation(0.dp)
+                        ) {
+                            Image(painter = painterResource(R.drawable.no),
+                                contentDescription = "no 버튼",
+                                Modifier.size(50.dp))
+                        }
+                    }
                 }
             )
 

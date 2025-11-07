@@ -91,7 +91,7 @@ fun HomeScreen( navController: NavController) {
                     Text(text="News", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold )
                 },
                 bottomContent = {
-                    Text("플라스틱 병의 라벨(비닐)은 제거하고 버려야 한다.", color = Color.Black, fontSize = 15.sp)
+                    Text("재활용 관련 뉴스 ", color = Color.Black, fontSize = 15.sp)
                     Row{
 
                     }

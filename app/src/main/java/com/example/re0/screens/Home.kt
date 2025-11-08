@@ -58,7 +58,8 @@ fun HomeScreen( navController: NavController) {
     )
 
     Scaffold (
-        topBar = { TopBar() }
+        topBar = { TopBar() },
+        bottomBar ={ BottomBar()}
     ) { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize()

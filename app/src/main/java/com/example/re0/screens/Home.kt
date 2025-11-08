@@ -1,12 +1,16 @@
 package com.example.re0.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -24,9 +28,35 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.re0.R
 import com.example.re0.components.MintCardTemplate
+import com.example.re0.components.NewsCard
+import com.example.re0.data.NewsItem
 
 @Composable
 fun HomeScreen( navController: NavController) {
+    val newsList = listOf(
+        NewsItem(
+            title = "폐플라스틱 재활용, '화학적 분해' 혁신 기술 도입",
+            content = "열분해 기술로 복합 재질 플라스틱을 고품질 원료로 되돌리는 기술이 상용화를 앞두고 있습니다.",
+            source = "과학기술정보통신부",
+            date = "2025. 10. 28.",
+            imgId = R.drawable.rectangle1_1
+        ),
+        NewsItem(
+            title = "AI 기술로 재활용 분류 정확도 향상",
+            content = "카메라 인식과 딥러닝을 이용한 자동 분류 시스템이 전국 지자체에 확대될 예정입니다.",
+            source = "환경부",
+            date = "2025. 11. 01.",
+            imgId = R.drawable.rectangle1_2
+        ),
+        NewsItem(
+            title = "폐플라스틱 재활용, '화학적 분해' 혁신 기술 도입",
+            content = "열분해 기술로 복합 재질 플라스틱을 고품질 원료로 되돌리는 기술이 상용화를 앞두고 있습니다.",
+            source = "과학기술정보통신부",
+            date = "2025. 10. 28.",
+            imgId = R.drawable.rectangle1_1
+        )
+    )
+
     Scaffold (
         topBar = { TopBar() }
     ) { innerPadding ->
@@ -92,15 +122,20 @@ fun HomeScreen( navController: NavController) {
                 },
                 bottomContent = {
                     Text("재활용 관련 뉴스 ", color = Color.Black, fontSize = 15.sp)
-                    Row{
-
+                    LazyRow(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        items(newsList) { news ->
+                            NewsCard(
+                                news = news,
+                            )
+                        }
                     }
                 }
             )
-
         }
     }
-
 }
 
 @Preview(showBackground = true)

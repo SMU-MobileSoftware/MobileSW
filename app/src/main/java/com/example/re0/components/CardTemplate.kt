@@ -19,8 +19,10 @@ import androidx.compose.ui.unit.dp
 import com.example.re0.ui.theme.Mint
 
 @Composable
-fun MintCardTemplate(
+fun CardTemplate(
     modifier: Modifier = Modifier,
+    topColor: Color= Mint,
+    bottomColor: Color=Color.White,
     topContent: @Composable () -> Unit = {},
     bottomContent: @Composable () -> Unit = {}
 ) {
@@ -31,7 +33,7 @@ fun MintCardTemplate(
             .clip(RoundedCornerShape(12.dp))
             .border(
                 width = 2.dp,
-                color = Mint,
+                color = topColor,
                 shape = RoundedCornerShape(12.dp)
             )
     ) {
@@ -39,7 +41,7 @@ fun MintCardTemplate(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)
-                .background(color = Mint),
+                .background(color = topColor),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -50,7 +52,7 @@ fun MintCardTemplate(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
-                .background(color = Color.White),
+                .background(color = bottomColor),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -60,8 +62,8 @@ fun MintCardTemplate(
 }
 @Preview(showBackground = true)
 @Composable
-fun MintCardPreview() {
-    MintCardTemplate(
+fun CardPreview() {
+    CardTemplate(
         topContent = {
             Text("챌린지 2", color = Color.White)
         },

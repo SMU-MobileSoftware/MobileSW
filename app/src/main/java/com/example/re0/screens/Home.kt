@@ -27,9 +27,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.re0.R
-import com.example.re0.components.MintCardTemplate
+import com.example.re0.components.CardTemplate
 import com.example.re0.components.NewsCard
 import com.example.re0.data.NewsItem
+import com.example.re0.ui.theme.Mint
 
 @Composable
 fun HomeScreen( navController: NavController) {
@@ -67,7 +68,9 @@ fun HomeScreen( navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
 
             ) {
-            MintCardTemplate(
+            CardTemplate(
+                topColor=Mint,
+                bottomColor=Color.White,
                 topContent = {
                     Text(text="오늘의 제로웨이스트 TIP", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold )
                 },
@@ -77,7 +80,9 @@ fun HomeScreen( navController: NavController) {
                 }
             )
 
-            MintCardTemplate(
+            CardTemplate(
+                topColor=Mint,
+                bottomColor=Color.White,
                 topContent = {
                     Text(text="오늘의 다짐", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold )
                 },
@@ -86,7 +91,9 @@ fun HomeScreen( navController: NavController) {
                 }
             )
 
-            MintCardTemplate(
+            CardTemplate(
+                topColor=Mint,
+                bottomColor=Color.White,
                 topContent = {
                     Text(text="OX 퀴즈", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold )
                 },
@@ -117,7 +124,9 @@ fun HomeScreen( navController: NavController) {
                 }
             )
 
-            MintCardTemplate(
+            CardTemplate(
+                topColor=Mint,
+                bottomColor=Color.White,
                 topContent = {
                     Text(text="News", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold )
                 },

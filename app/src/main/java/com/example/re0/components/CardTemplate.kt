@@ -21,8 +21,8 @@ import com.example.re0.ui.theme.Mint
 @Composable
 fun CardTemplate(
     modifier: Modifier = Modifier,
-    topColor: Color,
-    bottomColor: Color,
+    topColor: Color= Mint,
+    bottomColor: Color=Color.White,
     topContent: @Composable () -> Unit = {},
     bottomContent: @Composable () -> Unit = {}
 ) {
@@ -64,8 +64,6 @@ fun CardTemplate(
 @Composable
 fun CardPreview() {
     CardTemplate(
-        topColor=Mint,
-        bottomColor=Color.White,
         topContent = {
             Text("챌린지 2", color = Color.White)
         },

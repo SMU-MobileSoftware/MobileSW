@@ -1,4 +1,4 @@
-package com.example.re0.data
+package com.example.re0.model
 
 data class NewsItem(
     val title: String,

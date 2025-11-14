@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -40,23 +41,27 @@ fun CardTemplate(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(50.dp)
+                //.height(50.dp)
                 .background(color = topColor),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.height(10.dp))
             topContent()
+            Spacer(modifier = Modifier.height(10.dp))
         }
 
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(10.dp)
+                //.padding(10.dp)
                 .background(color = bottomColor),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Spacer(modifier = Modifier.height(10.dp))
             bottomContent()
+            Spacer(modifier = Modifier.height(10.dp))
         }
     }
 }

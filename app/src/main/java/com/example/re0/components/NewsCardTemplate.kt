@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.re0.R
-import com.example.re0.data.NewsItem
+import com.example.re0.model.NewsItem
 
 @Composable
 fun NewsCard(modifier: Modifier = Modifier,

@@ -29,7 +29,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.re0.R
 import com.example.re0.components.CardTemplate
 import com.example.re0.components.NewsCard
-import com.example.re0.data.NewsItem
+import com.example.re0.model.NewsItem
 import com.example.re0.ui.theme.Mint
 
 @Composable

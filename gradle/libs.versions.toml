@@ -26,6 +26,7 @@ datastore = "1.1.0"
 retrofit = "2.10.0"
 okhttp = "4.11.0"
 moshi = "1.15.0"
+material3 = "1.4.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -62,6 +63,7 @@ hilt-lifecycle-vm-compose = { module = "androidx.hilt:hilt-lifecycle-viewmodel-c
 
 #DataStore
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

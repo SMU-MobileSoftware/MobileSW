@@ -26,7 +26,7 @@ fun PlaceItem(place: Place) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(15.dp)
+            .padding(5.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(Color.LightGray)
 

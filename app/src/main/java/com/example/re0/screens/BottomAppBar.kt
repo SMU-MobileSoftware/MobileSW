@@ -4,10 +4,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -34,41 +33,38 @@ fun BottomBar(){
         ) {
             Row (
                 modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center){
+                    .fillMaxWidth()
+                    .padding(horizontal = 35.dp),
+                horizontalArrangement = Arrangement.SpaceBetween){
                 Image(
                     painter = painterResource(id = R.drawable.info),
                     contentDescription = "bottomAppBar",
                     modifier = Modifier
-                        .size(40.dp)
+                        .size(28.dp)
                 )
-                Spacer(modifier = Modifier.width(30.dp))
                 Image(
                     painter = painterResource(id = R.drawable.map),
                     contentDescription = "bottomAppBar",
                     modifier = Modifier
-                        .size(40.dp)
+                        .size(28.dp)
                 )
-                Spacer(modifier = Modifier.width(30.dp))
                 Image(
                     painter = painterResource(id = R.drawable.home),
                     contentDescription = "bottomAppBar",
                     modifier = Modifier
-                        .size(40.dp)
+                        .size(28.dp)
                 )
-                Spacer(modifier = Modifier.width(30.dp))
                 Image(
                     painter = painterResource(id = R.drawable.history),
                     contentDescription = "bottomAppBar",
                     modifier = Modifier
-                        .size(40.dp)
+                        .size(28.dp)
                 )
-                Spacer(modifier = Modifier.width(30.dp))
                 Image(
                     painter = painterResource(id = R.drawable.mypage),
                     contentDescription = "bottomAppBar",
                     modifier = Modifier
-                        .size(40.dp)
+                        .size(28.dp)
                 )
             }
         }

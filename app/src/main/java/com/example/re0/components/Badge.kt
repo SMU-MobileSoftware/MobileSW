@@ -23,23 +23,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.re0.R
 import com.example.re0.model.Achievement
 import com.example.re0.ui.theme.Mint
 
 @Composable
 fun BadgeItem(achievement: Achievement) {
     Column(horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.width(50.dp)
+        modifier = Modifier.width(60.dp)
     ) {
         Image(
             painter = painterResource(achievement.iconUrl),
             contentDescription = "배지 이미지",
             modifier = Modifier
-                .size(30.dp)
+                .size(35.dp)
                 .clip(CircleShape)
                 .background(Mint),
             contentScale = ContentScale.Crop
@@ -60,7 +58,7 @@ fun MyBadge( achievements: List<Achievement>) {
                 fontSize = 23.sp,
                 fontWeight = FontWeight.Bold
             )
-            Text("획득 목록 : ${achievements.size}", fontSize = 18.sp)
+            Text("획득 목록 : ${achievements.size}", fontSize = 14.sp)
             HorizontalDivider(
                 thickness = 1.dp,
                 color = Color.LightGray
@@ -71,14 +69,15 @@ fun MyBadge( achievements: List<Achievement>) {
                 modifier = Modifier.clip(shape = RoundedCornerShape(15.dp)),
                 ) {
                 FlowRow(
-                    maxItemsInEachRow = 6,
+                    maxItemsInEachRow = 5,
                     modifier = Modifier.fillMaxWidth()
                         .background(Color.White)
-                        .padding(10.dp)
-
+                        .padding(8.dp)
+                        ,
+                    horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                     achievements.forEach { achievement ->
-                        Box(modifier = Modifier.padding(horizontal = 3.dp)) {
+                        Box{//(modifier = Modifier.padding(horizontal = 2.dp)) {
                             BadgeItem(achievement)
                         }
                     }
@@ -87,7 +86,7 @@ fun MyBadge( achievements: List<Achievement>) {
         }
     )
 }
-
+/*
 @Preview(showBackground = true)
 @Composable
 fun MyPBadgePreview() {
@@ -129,3 +128,4 @@ val sampleAchievements = listOf(
         iconUrl = R.drawable.rectangle1_1,
     )
 )
+*/

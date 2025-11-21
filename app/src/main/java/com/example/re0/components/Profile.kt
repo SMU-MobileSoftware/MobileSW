@@ -27,12 +27,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.example.re0.model.Achievement
 import com.example.re0.model.Profile
 import com.example.re0.ui.theme.Mint
 
 @Composable
 fun MyProfile(
-    uiState: Profile
+    uiState: Profile,
+    achievements: List<Achievement>
 ) {
     CardTemplate(
         topColor = Mint,
@@ -74,7 +76,7 @@ fun MyProfile(
                     Column {
                         Text("닉네임: ${uiState.name}", fontSize = 15.sp)
                         Text("이메일: ${uiState.email}", fontSize = 15.sp)
-                        Text("달성기록: ${uiState.achievements.size}", fontSize = 15.sp)
+                        Text("달성기록:  ${achievements.size}", fontSize = 15.sp)
                     }
                     Spacer(modifier = Modifier.width(10.dp))
                     Column{

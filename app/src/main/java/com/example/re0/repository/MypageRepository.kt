@@ -13,7 +13,9 @@ open class MypageRepository@Inject constructor(
     //val allAchievements: List<Achievement> = achievementDao.getAllAchievement()
 
     suspend fun insertAchievement(achievement: Achievement) = achievementDao.insertAchievement(achievement)
-    fun getAllAchievement(): List<Achievement> =achievementDao.getAllAchievement()
+    suspend fun getAllAchievement(): List<Achievement> =achievementDao.getAllAchievement()
+    suspend fun markDone(id: Int) = achievementDao.markDone(id)
+
     suspend fun getProfile(): Profile? = profileDao.getProfile()
     suspend fun updateProfile(profile: Profile) = profileDao.updateProfile(profile)
     suspend fun insertProfile(profile: Profile) = profileDao.insertProfile(profile)

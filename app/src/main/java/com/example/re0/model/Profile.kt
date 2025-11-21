@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 data class Profile(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val imageUrl: String,
+    val imageUrl: Int,
     val name: String,
     val email: String,
-    val achievements: List<Achievement>
+    //val achievements: List<Achievement>
 )

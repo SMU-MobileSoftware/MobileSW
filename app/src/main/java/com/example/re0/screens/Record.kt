@@ -96,13 +96,7 @@ fun RecordContent(
     val progressFraction = progressPercent / 100f
 
     // 요일 변수 (기존과 동일)
-    var monday by remember { mutableStateOf("재활용 수거일") }
-    var tuesday by remember { mutableStateOf("일반 쓰레기") }
-    var wednesday by remember { mutableStateOf("음식물 수거일") }
-    var thursday by remember { mutableStateOf("대형 폐기물") }
-    var friday by remember { mutableStateOf("대형 폐기물") }
-    var saturday by remember { mutableStateOf("대형 폐기물") }
-    var sunday by remember { mutableStateOf("대형 폐기물") }
+    val garbageState by viewModel.garbageState.collectAsState()
 
     Column(
         modifier = Modifier.fillMaxWidth().padding(innerPadding).padding(16.dp).verticalScroll(rememberScrollState()),
@@ -131,13 +125,13 @@ fun RecordContent(
                 Text("쓰레기 버리는 날", fontSize = 24.sp, fontWeight = FontWeight.Bold, modifier = Modifier.align(Alignment.CenterHorizontally))
             }
             Row(modifier = Modifier.fillMaxWidth().padding(12.dp), horizontalArrangement = Arrangement.SpaceBetween) {
-                GarbageDayItem("월", monday) { monday = it }
-                GarbageDayItem("화", tuesday) { tuesday = it }
-                GarbageDayItem("수", wednesday) { wednesday = it }
-                GarbageDayItem("목", thursday) { thursday = it }
-                GarbageDayItem("금", friday) { friday = it }
-                GarbageDayItem("토", saturday) { saturday = it }
-                GarbageDayItem("일", sunday) { sunday = it }
+                GarbageDayItem("월", garbageState.mon) { viewModel.updateGarbageDay("월", it) }
+                GarbageDayItem("화", garbageState.tue) { viewModel.updateGarbageDay("화", it) }
+                GarbageDayItem("수", garbageState.wed) { viewModel.updateGarbageDay("수", it) }
+                GarbageDayItem("목", garbageState.thu) { viewModel.updateGarbageDay("목", it) }
+                GarbageDayItem("금", garbageState.fri) { viewModel.updateGarbageDay("금", it) }
+                GarbageDayItem("토", garbageState.sat) { viewModel.updateGarbageDay("토", it) }
+                GarbageDayItem("일", garbageState.sun) { viewModel.updateGarbageDay("일", it) }
             }
         }
 
